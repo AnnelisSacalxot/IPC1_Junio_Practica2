@@ -7,30 +7,27 @@ de las películas que tiene una empresa de alquiler de películas*/
 
 public class Memorabilia {
 
-            //Las variables globales que tendrá el código
-            static Scanner leer = new Scanner(System.in);
-            static boolean salir = false;
-            static int opcion=0;
-    
-    
-    
-        //Vamos a declarar las variables globales y dentro de los métodos las
-        //variables locales
-       // String nombre[] = new String(1);
-        //int idCliente[] = new int(1);
-        //int telefono[] = new int();
-        boolean tienePeliculaPrestado = false;
-        int idPelicula[] = new int[cantidadPelicula];
-        String nombrePelicula[] = new String[cantidadPelicula];
-        int año[] = new int[cantidadPelicula];
-        String categoriaPelicula[] = new String[cantidadPelicula];
-        boolean disponible = false;
-        //int diasPrestamo[] = new int();
-        static int cantidadPelicula = leer.nextInt();
-    public static void main(String[] args) {
-        
+    //Las variables globales que tendrá el código
+    private static boolean salir;
+    private static int opcion = 0;
+    private static int cantidadPelicula;
+    static Scanner leer = new Scanner(System.in);
+    // String nombre[] = new String(1);
+    //int idCliente[] = new int(1);
+    //int telefono[] = new int();
+    boolean tienePeliculaPrestado = false;
+    static int[] idPelicula = new int[cantidadPelicula];
+    static String[] nombrePelicula = new String[cantidadPelicula];
+    static int[] año = new int[cantidadPelicula];
+    static String[] categoriaPelicula = new String[cantidadPelicula];
+    boolean disponible = false;
+    //int diasPrestamo[] = new int();
 
-         //Se realizará el menú con las opciones correspondites
+
+    public static void main(String[] args) {
+
+
+        //Se realizará el menú con las opciones correspondites
         while (!salir) {
 
             System.out.println("°|°|°|°|°|° Menú °|°|°|°|°|°");
@@ -84,8 +81,8 @@ public class Memorabilia {
                 case 9:
                     salir = false;
                     System.out.println("---Gracias---");
-                    break;    
-            
+                    break;
+
                 default:
                     System.out.println("Opción no encontrada");
             }
@@ -111,7 +108,7 @@ public class Memorabilia {
         leer.nextLine();
 
         //Crearemos un ciclo para que dependiendo las peliculas que se desean
-        //añadir se solicite los datos correspondientes 
+        //añadir se solicite los datos correspondientes
 
         for (int i = 0; i < cantidadPelicula; i++) {
             System.out.println("« « « Película"+(i+1) +"» » »");
