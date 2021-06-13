@@ -29,6 +29,74 @@ public class Memorabilia {
             System.out.println("\n Escriba la opción a elegir: ");
 
             opcion = leer.nextInt();
+
+            //Dependiendo la opción que se elija se hará algo
+            switch (opcion) {
+                case 1:
+                    System.out.println("--- Opción 1 ---");
+                    prestamoPelicula();
+                    break;
+                case 2:
+                    System.out.println("--- Opción 2 ---");
+                    devolucionPelicula();
+                    break;
+                case 3:
+                    System.out.println("--- Opción 3 ---");
+                    mostrarPelicula();
+                    break;
+                case 4:
+                    System.out.println("--- Opción 4 ---");
+                    ingresoPelicula();
+                    break;
+                case 5:
+                    System.out.println("--- Opción 5 ---");
+                    Peliculas();
+                    break;
+                case 6:
+                    System.out.println("--- Opción 6 ---");
+                    ingresoClienteNuevo();
+                    break;
+                case 7:
+                    System.out.println("--- Opción 7 ---");
+                    mostrarCliente();
+                    break;
+                case 8:
+                    System.out.println("--- Opción 8 ---");
+                    Reporte();
+                    break;
+                case 9:
+                    salir = false;
+                    System.out.println("---Gracias---");
+                    break;    
+            
+                default:
+                   // break;
+                    System.out.println("Opción no encontrada");
+            }
         }
+    }
+
+    private static void Reporte() {
+    }
+
+    private static void mostrarCliente() {
+    }
+
+    private static void ingresoClienteNuevo() {
+    }
+
+    private static void Peliculas() {
+    }
+
+    private static void ingresoPelicula() {
+    }
+
+    private static void mostrarPelicula() {
+    }
+
+    private static void devolucionPelicula() {
+    }
+
+    private static void prestamoPelicula() {
     }
 }
