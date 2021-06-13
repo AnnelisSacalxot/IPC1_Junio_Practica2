@@ -1,17 +1,34 @@
+
 //import jdk.javadoc.internal.doclets.formats.html.SourceToHTMLConverter;
 import java.util.*;
 
 /* Se solicita que desarrolle un programa para llevar el contros
 de las películas que tiene una empresa de alquiler de películas*/
 
-
 public class Memorabilia {
+
+            //Las variables globales que tendrá el código
+            static Scanner leer = new Scanner(System.in);
+            static boolean salir = false;
+            static int opcion=0;
+    
+    
+    
+        //Vamos a declarar las variables globales y dentro de los métodos las
+        //variables locales
+       // String nombre[] = new String(1);
+        //int idCliente[] = new int(1);
+        //int telefono[] = new int();
+        boolean tienePeliculaPrestado = false;
+        int idPelicula[] = new int[cantidadPelicula];
+        String nombrePelicula[] = new String[cantidadPelicula];
+        int año[] = new int[cantidadPelicula];
+        String categoriaPelicula[] = new String[cantidadPelicula];
+        boolean disponible = false;
+        //int diasPrestamo[] = new int();
+        static int cantidadPelicula = leer.nextInt();
     public static void main(String[] args) {
-     
-        //Las variables globales que tendrá el código
-        Scanner leer = new Scanner(System.in);
-        boolean salir = false;
-        int opcion=0;
+        
 
          //Se realizará el menú con las opciones correspondites
         while (!salir) {
@@ -70,7 +87,6 @@ public class Memorabilia {
                     break;    
             
                 default:
-                   // break;
                     System.out.println("Opción no encontrada");
             }
         }
@@ -89,6 +105,26 @@ public class Memorabilia {
     }
 
     private static void ingresoPelicula() {
+
+        System.out.println("Ingrese la cantidad de películas para añadir");
+        cantidadPelicula = leer.nextInt();
+        leer.nextLine();
+
+        //Crearemos un ciclo para que dependiendo las peliculas que se desean
+        //añadir se solicite los datos correspondientes 
+
+        for (int i = 0; i < cantidadPelicula; i++) {
+            System.out.println("« « « Película"+(i+1) +"» » »");
+            System.out.println("Id de película: ");
+            idPelicula[i] = leer.nextInt();
+            System.out.println("Nombre de la película: ");
+            nombrePelicula[i] = leer.nextLine();
+            System.out.println("Año de publicación: ");
+            año[i] = leer.nextInt();
+            System.out.println("Categoría, ejemplo: terror, fantasía, otros):");
+            categoriaPelicula[i] = leer.nextLine();
+        }
+
     }
 
     private static void mostrarPelicula() {
