@@ -230,14 +230,15 @@ public class Memorabilia {
     }
 
     private static void prestamoPelicula() {
+
+        mostrarPelicula();
+
         idPelicula = new int[contadorGeneral];
         idCliente = new int[contadorGeneral];
         diasPrestamoPelicula = new  int[contadorGeneral];
 
-        Peliculas();
-
-        for (int o = 0; o < contadorGeneral; o++) {
-            System.out.println("### Prestamo pelicula ###");
+        for (int o = 0; o < 1; o++) {
+            System.out.println("\n### Prestamo pelicula ###");
             System.out.println("Ingrese ID (usuario): ");
             idCliente[o] = leer.nextInt();
             leer.nextLine();
