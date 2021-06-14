@@ -2,29 +2,29 @@
 //import jdk.javadoc.internal.doclets.formats.html.SourceToHTMLConverter;
 import java.util.*;
 
-/* Se solicita que desarrolle un programa para llevar el contros
+/* Se solicita que desarrolle un programa para llevar el control
 de las películas que tiene una empresa de alquiler de películas*/
 
 public class Memorabilia {
 
-    //Las variables globales que tendrá el código
+  //Las variables globales que tendrá el código
     //Para peliculas
     private static boolean salir = false;
     private static int opcion;
-    private static int cantidadPelicula = 0;
+    private static int contadorGeneral = 0; // Sólo se puede tener un contador en general, tomar eso en cuenta
     static Scanner leer = new Scanner(System.in);
-    private static int[] idPelicula = new int[cantidadPelicula] ;
-    private static String[] nombrePelicula = new String[cantidadPelicula];
-    private static String[] categoriaPelicula = new String[cantidadPelicula];
-    private static int[] año = new int[cantidadPelicula];
+    private static int[] idPelicula = new int[contadorGeneral] ;
+    private static String[] nombrePelicula = new String[contadorGeneral];
+    private static String[] categoriaPelicula = new String[contadorGeneral];
+    private static int[] año = new int[contadorGeneral];
 
     //Para clientes
-
-    private static String[] nombreCliente = new String[cantidadClientesNuevos];
-    private static int[] idCliente = new int[cantidadClientesNuevos];
-    private static int[] telefono = new int[cantidadClientesNuevos];
+    private static String[] nombreCliente = new String[contadorGeneral];
+    private static int[] idCliente = new int[contadorGeneral];
+    private static int[] telefono = new int[contadorGeneral];
     private static boolean tienePeliculaPrestado = false;
-    private static int cantidadClientesNuevos = 0;
+
+    
 
     public static void main(String[] args) {
 
@@ -96,7 +96,7 @@ public class Memorabilia {
 
     private static void mostrarCliente() {
 
-        for (int l = 0; l < cantidadPelicula; l++) {
+        for (int l = 0; l < contadorGeneral; l++) {
             System.out.println("« « « Cliente "+ (l+1) +"» » »");
             System.out.println("Nombre: "+nombreCliente[l]);
             System.out.println("ID cliente: "+idCliente[l]);
@@ -109,18 +109,18 @@ public class Memorabilia {
     private static void ingresoClienteNuevo() {
 
         System.out.println("Ingrese la cantidad de clientes nuevos que desee añadir");
-        cantidadClientesNuevos = leer.nextInt();
+        contadorGeneral = leer.nextInt();
         leer.nextLine();
 
         //Crearemos un ciclo para que dependiendo los clientes que desean agregarse
         //añadir se solicite los datos correspondientes
 
-        nombreCliente = new String[cantidadClientesNuevos];
-        idCliente = new int[cantidadClientesNuevos];
-        telefono = new int[cantidadClientesNuevos];
+        nombreCliente = new String[contadorGeneral];
+        idCliente = new int[contadorGeneral];
+        telefono = new int[contadorGeneral];
         tienePeliculaPrestado = false;
 
-        for (int k = 0; k < cantidadClientesNuevos; k++) {
+        for (int k = 0; k < contadorGeneral; k++) {
             System.out.println("« « « Cliente "+(k+1) +"» » »");
             System.out.println("Nombre: ");
             nombreCliente[k] = leer.nextLine();
@@ -142,18 +142,18 @@ public class Memorabilia {
     private static void ingresoPelicula() {
 
         System.out.println("Ingrese la cantidad de películas para añadir");
-        cantidadPelicula = leer.nextInt();
+        contadorGeneral= leer.nextInt();
         leer.nextLine();
 
         //Crearemos un ciclo para que dependiendo las peliculas que se desean
         //añadir se solicite los datos correspondientes
 
-        idPelicula = new int[cantidadPelicula];
-        nombrePelicula = new String[cantidadPelicula];
-        año = new int[cantidadPelicula];
-        categoriaPelicula = new String[cantidadPelicula];
+        idPelicula = new int[contadorGeneral];
+        nombrePelicula = new String[contadorGeneral];
+        año = new int[contadorGeneral];
+        categoriaPelicula = new String[contadorGeneral];
 
-        for (int i = 0; i < cantidadPelicula; i++) {
+        for (int i = 0; i < contadorGeneral; i++) {
             System.out.println("« « « Película "+(i+1) +"» » »");
             System.out.println("Id de película: ");
             idPelicula[i] = leer.nextInt();
@@ -171,7 +171,7 @@ public class Memorabilia {
 
     private static void mostrarPelicula() {
 
-        for (int j = 0; j < cantidadPelicula; j++) {
+        for (int j = 0; j < contadorGeneral; j++) {
             System.out.println("« « « Película "+ (j+1) +"» » »");
             System.out.println("Id de película: "+idPelicula[j]);
             System.out.println("Nombre de la película: "+nombrePelicula[j]);
