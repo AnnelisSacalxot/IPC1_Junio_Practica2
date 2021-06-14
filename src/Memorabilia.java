@@ -9,20 +9,13 @@ public class Memorabilia {
 
     //Las variables globales que tendrá el código
     private static boolean salir;
-    private static int opcion = 0;
-    private static int cantidadPelicula;
+    private static int opcion;
+    private static int cantidadPelicula = 0;
     static Scanner leer = new Scanner(System.in);
-    // String nombre[] = new String(1);
-    //int idCliente[] = new int(1);
-    //int telefono[] = new int();
-    boolean tienePeliculaPrestado = false;
-    static int[] idPelicula = new int[cantidadPelicula];
-    static String[] nombrePelicula = new String[cantidadPelicula];
-    static int[] año = new int[cantidadPelicula];
-    static String[] categoriaPelicula = new String[cantidadPelicula];
-    boolean disponible = false;
-    //int diasPrestamo[] = new int();
-
+    private static int[] idPelicula = new int[cantidadPelicula] ;
+    private static String[] nombrePelicula = new String[cantidadPelicula];
+    private static String[] categoriaPelicula = new String[cantidadPelicula];
+    private static int[] año = new int[cantidadPelicula];
 
     public static void main(String[] args) {
 
@@ -110,14 +103,21 @@ public class Memorabilia {
         //Crearemos un ciclo para que dependiendo las peliculas que se desean
         //añadir se solicite los datos correspondientes
 
+        idPelicula = new int[cantidadPelicula];
+        nombrePelicula = new String[cantidadPelicula];
+        año = new int[cantidadPelicula];
+        categoriaPelicula = new String[cantidadPelicula];
+
         for (int i = 0; i < cantidadPelicula; i++) {
-            System.out.println("« « « Película"+(i+1) +"» » »");
+            System.out.println("« « « Película "+(i+1) +"» » »");
             System.out.println("Id de película: ");
             idPelicula[i] = leer.nextInt();
+            leer.nextLine();
             System.out.println("Nombre de la película: ");
             nombrePelicula[i] = leer.nextLine();
-            System.out.println("Año de publicación: ");
+            System.out.println("Año de la película: ");
             año[i] = leer.nextInt();
+            leer.nextLine();
             System.out.println("Categoría, ejemplo: terror, fantasía, otros):");
             categoriaPelicula[i] = leer.nextLine();
         }
@@ -125,6 +125,15 @@ public class Memorabilia {
     }
 
     private static void mostrarPelicula() {
+
+        for (int j = 0; j < cantidadPelicula; j++) {
+            System.out.println("« « « Película "+ (j+1) +"» » »");
+            System.out.println("Id de película: "+idPelicula[j]);
+            System.out.println("Nombre de la película: "+nombrePelicula[j]);
+            System.out.println("Año de la película: "+año[j]);
+            System.out.println("Categoría: "+categoriaPelicula[j]);
+        }
+
     }
 
     private static void devolucionPelicula() {
@@ -132,4 +141,5 @@ public class Memorabilia {
 
     private static void prestamoPelicula() {
     }
+
 }
