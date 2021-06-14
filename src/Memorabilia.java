@@ -70,6 +70,7 @@ public class Memorabilia {
                 case 5:
                     System.out.println("--- Opción 5 ---");
                     Peliculas();
+                    mostrarPeliculaOrdenada();
                     break;
                 case 6:
                     System.out.println("--- Opción 6 ---");
@@ -92,6 +93,13 @@ public class Memorabilia {
                 default:
                     System.out.println("Opción no encontrada");
             }
+        }
+    }
+
+    private static void mostrarPeliculaOrdenada() {
+
+        for (String a:nombrePelicula) {
+            System.out.println(a);
         }
     }
 
