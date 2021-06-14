@@ -7,7 +7,6 @@ de las películas que tiene una empresa de alquiler de películas*/
 
 public class Memorabilia {
 
-    
     //Las variables globales que tendrá el código
     //Para peliculas
     private static boolean salir = false;
@@ -229,6 +228,11 @@ public class Memorabilia {
     }
 
     private static void prestamoPelicula() {
+        
+        //Llamo a mi metodo Película porque ahí estan almacenados todas las peliculas
+        // y se msotrará para que el cliente pueda elegir el que le guste
+        
+        Peliculas();
     }
 }
 
