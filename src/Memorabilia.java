@@ -7,7 +7,8 @@ de las películas que tiene una empresa de alquiler de películas*/
 
 public class Memorabilia {
 
-      //Las variables globales que tendrá el código
+    
+    //Las variables globales que tendrá el código
     //Para peliculas
     private static boolean salir = false;
     private static int opcion;
@@ -23,7 +24,7 @@ public class Memorabilia {
     private static String[] nombreCliente = new String[contadorGeneral];
     private static int[] idCliente = new int[contadorGeneral];
     private static int[] telefono = new int[contadorGeneral];
-    private static boolean tienePeliculaPrestado;
+    private static boolean tienePeliculaPrestado = true;
 
 
 
@@ -97,18 +98,18 @@ public class Memorabilia {
     private static void validarClientePelicula() {
 
         if (idPelicula == idPelicula) {
-            tienePeliculaPrestado = false;
-        } else {
             tienePeliculaPrestado = true;
+        } else {
+            tienePeliculaPrestado = false;
         }
     }
 
     private static void validarEstadoPelicula() {
 
         if (idPelicula == idPelicula) {
-            tienePeliculaPrestado = false;
-        } else {
             tienePeliculaPrestado = true;
+        } else {
+            tienePeliculaPrestado = false;
         }
 
     }
@@ -157,6 +158,19 @@ public class Memorabilia {
     }
 
     private static void Peliculas() {
+
+        for (int m = 0; m < nombrePelicula.length ; m++) {
+            for (int n = 0; n < nombrePelicula.length; n++) {
+                
+                //Se hará una comparación para que estos queden odenados de manera alfabetica
+
+                if (nombrePelicula[m].compareToIgnoreCase(nombrePelicula[n]) < 0) {
+                    String almacenarNombres = nombrePelicula[m];
+                    nombrePelicula[m] = nombrePelicula[n];
+                    nombrePelicula[n] = almacenarNombres;
+                }
+            }
+        }
     }
 
     private static void ingresoPelicula() {
