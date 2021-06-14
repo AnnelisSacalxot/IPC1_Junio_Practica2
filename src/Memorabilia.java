@@ -53,6 +53,7 @@ public class Memorabilia {
                 case 1:
                     System.out.println("--- Opción 1 ---");
                     prestamoPelicula();
+                    imprimirDatos();
                     break;
                 case 2:
                     System.out.println("--- Opción 2 ---");
@@ -95,6 +96,18 @@ public class Memorabilia {
             }
         }
     }
+
+    private static void imprimirDatos() {
+
+        for (int p = 0; p < 1; p++) {
+            System.out.println("\n### Prestamo pelicula ###");
+            System.out.println("Id cliente: "+idCliente[p]);
+            System.out.println("Id de película: "+idPelicula[p]);
+            System.out.println("Días que será prestado: "+diasPrestamoPelicula[p]);
+            System.out.println("Pelicula disponible: "+false);
+        }
+
+        }
 
     private static void mostrarPeliculaOrdenada() {
 
