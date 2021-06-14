@@ -178,6 +178,7 @@ public class Memorabilia {
                 }
             }
         }
+        System.out.println("\nEstado de película: "+tienePeliculaPrestado);
     }
 
     private static void ingresoPelicula() {
@@ -228,11 +229,23 @@ public class Memorabilia {
     }
 
     private static void prestamoPelicula() {
-        
+
         //Llamo a mi metodo Película porque ahí estan almacenados todas las peliculas
         // y se msotrará para que el cliente pueda elegir el que le guste
-        
+
         Peliculas();
+
+        String compararNombrePelicula;
+        System.out.println("\nIngrese el nombre de la película que desea prestar: ");
+        compararNombrePelicula = leer.nextLine();
+
+        //Hacemos un if para comparar las cadenas
+
+        if (compararNombrePelicula.equals(nombrePelicula)) {
+            tienePeliculaPrestado = true;
+        } else {
+            tienePeliculaPrestado = false;
+        }
     }
 }
 
