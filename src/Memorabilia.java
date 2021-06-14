@@ -17,6 +17,7 @@ public class Memorabilia {
     private static String[] nombrePelicula = new String[contadorGeneral];
     private static String[] categoriaPelicula = new String[contadorGeneral];
     private static int[] año = new int[contadorGeneral];
+    private static int[] diasPrestamoPelicula = new  int[contadorGeneral];
 
     //Para clientes
 
@@ -229,23 +230,25 @@ public class Memorabilia {
     }
 
     private static void prestamoPelicula() {
-
-        //Llamo a mi metodo Película porque ahí estan almacenados todas las peliculas
-        // y se msotrará para que el cliente pueda elegir el que le guste
+        idPelicula = new int[contadorGeneral];
+        idCliente = new int[contadorGeneral];
+        diasPrestamoPelicula = new  int[contadorGeneral];
 
         Peliculas();
 
-        String compararNombrePelicula;
-        System.out.println("\nIngrese el nombre de la película que desea prestar: ");
-        compararNombrePelicula = leer.nextLine();
-
-        //Hacemos un if para comparar las cadenas
-
-        if (compararNombrePelicula.equals(nombrePelicula)) {
-            tienePeliculaPrestado = true;
-        } else {
-            tienePeliculaPrestado = false;
+        for (int o = 0; o < contadorGeneral; o++) {
+            System.out.println("### Prestamo pelicula ###");
+            System.out.println("Ingrese ID (usuario): ");
+            idCliente[o] = leer.nextInt();
+            leer.nextLine();
+            System.out.println("Ingrese ID de la Pelicula");
+            idPelicula[o] = leer.nextInt();
+            leer.nextLine();
+            System.out.println("Días que deseaa presta la película (no exceda de 15)");
+            diasPrestamoPelicula[o] = leer.nextInt();
+            leer.nextLine();
         }
+
     }
 }
 
